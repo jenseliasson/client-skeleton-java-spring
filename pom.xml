@@ -31,6 +31,7 @@
 	</repositories>
 	
 	<modules>
+	    <module>datamanager-consumer</module>
 	    <module>client-skeleton-consumer</module>
 	    <module>client-skeleton-provider</module>
 	    <module>client-skeleton-subscriber</module>
