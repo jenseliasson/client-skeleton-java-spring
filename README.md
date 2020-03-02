@@ -25,6 +25,8 @@ This is a multi-module maven project relying on the [parent `pom.xml`](https://g
 
 * **client-skeleton-publisher**: client publisher module with the purpose of publishing events into the Event Handler.
 
+* **datamanager-consumer**: client consumer for the DataManager's Historian service. Will run in a loop and fetch the latest SenML message for the target endpoint
+
 Skeletons are built on the [`Arrowhead Client Library`](https://github.com/arrowhead-f/client-library-java-spring) which is also imported to this project as a Maven dependency. The client library provides the `ArrowheadService.class` which is a singleton spring managed bean and designed with the purpose of interacting with Arrowhead Framework. Use its methods by [autowiring](https://www.baeldung.com/spring-autowire) into your spring managed custom classes or use `ArrowheadBeans.getArrowheadService()` if your custom class is not spring managed. *(**Look for the java docs** attached for each method within this class.)*
 
 Each client skeleton has a default 'ApplicationInitListener' and a default 'SecurityConfig' what you can change or extend. The essential configuration has to be managed by customizing the `application.properties` file, located in `src/main/resources` folder.
