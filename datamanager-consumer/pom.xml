@@ -7,7 +7,7 @@
     	<version>4.1.3.3</version>
   	</parent>
 	
-	<artifactId>arrowhead-datamanager-consumer</artifactId>
+	<artifactId>client-datamanager-consumer</artifactId>
 	<name>Arrowhead DataManager Consumer</name>
 	
 	<build>
