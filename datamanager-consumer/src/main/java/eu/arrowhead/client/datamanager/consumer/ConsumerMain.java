@@ -79,9 +79,8 @@ public class ConsumerMain implements ApplicationRunner {
 	t.schedule(new TimerTask(){
 		@Override
 		public void run() {
-			logger.info("timer fired!");
 			final String jresp = arrowheadService.consumeServiceHTTP(String.class, HttpMethod.GET, "192.168.1.114", 8461, "/datamanager/historian/mulle-342/_mulle-342._temperature._http._tw.net", "HTTP-INSECURE-JSON", null, null);
-			System.out.println(jresp + "\n" );
+			//System.out.println(jresp + "\n" );
 			SenML[] sml = Utilities.fromJson(jresp, SenML[].class);
 			bq.add(sml);
 		}
@@ -92,7 +91,6 @@ public class ConsumerMain implements ApplicationRunner {
 			//Thread.sleep(10);
 			SenML[] latest = (SenML[])bq.take();
 			System.err.println("> " + Utilities.toJson(latest));
-			System.out.print(".");
 		} catch (InterruptedException ie) {}
 	}
     	
